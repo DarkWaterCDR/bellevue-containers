@@ -1,0 +1,16 @@
+services:
+  jupyterlab:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: C:\codebase
+        target: /app
+    ports:
+      - "8888:8888"
+      - "54321:54321"
+
+networks:
+  podman:
+    external: true
