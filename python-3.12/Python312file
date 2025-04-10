@@ -24,9 +24,12 @@ RUN dnf install -y python3.12 && \
 
 RUN python -m venv /tmp/.venv && \
     source /tmp/.venv/bin/activate && \
-    python -m pip install --upgrade pip && \
-    pip install -r /tmp/requirements.txt && \
-    pip install ipykernel && \
+    python -m pip install --upgrade pip
+
+# uncomment below if you copied in a requirements.txt file for your course repo
+# RUN pip install -r /tmp/requirements.txt
+
+RUN pip install ipykernel && \
     python -m ipykernel install --user --name=.venv
 
 EXPOSE 8888 54321
