@@ -2,7 +2,7 @@ services:
   jupyterlab:
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Python312file
     volumes:
       - type: bind
         source: C:\codebase
