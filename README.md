@@ -3,6 +3,9 @@ Collection of folders with docker-compose and docker files for creating images t
 
 # TODO : Create usage instructions here
 
+```bash
+podman compose --file python312-compose.yml up
+```
 
 
 # References
