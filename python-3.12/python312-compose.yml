@@ -5,8 +5,8 @@ services:
       dockerfile: Python312file
     volumes:
       - type: bind
-        source: C:\codebase
-        target: /app
+        source: /path/to/project_name
+        target: /app/project_name
     ports:
       - "8888:8888"
       - "54321:54321"

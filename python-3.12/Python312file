@@ -9,7 +9,9 @@ WORKDIR /app
 # with a course repository that has a defined 'requirements.txt'
 # file.
 
-# COPY course_repo_directory/requirements.txt /tmp/.
+RUN pwd
+
+COPY ["requirements.txt", "/tmp/."]
 
 RUN dnf install -y python3.12 && \
     dnf install -y python3.12-pip && \
@@ -27,7 +29,7 @@ RUN python -m venv /tmp/.venv && \
     python -m pip install --upgrade pip
 
 # uncomment below if you copied in a requirements.txt file for your course repo
-# RUN pip install -r /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 
 RUN pip install ipykernel && \
     python -m ipykernel install --user --name=.venv
